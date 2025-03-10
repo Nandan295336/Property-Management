@@ -19,7 +19,8 @@ public class PropertyEntity {
     @Column(name = "PROPERTY_TITLE", nullable = false)
     private String title;
     private String description;
-    private String ownerName;
+    private Double price;
+    private String address;
 
     public void setId(Long id) {
         this.id = id;
@@ -31,14 +32,6 @@ public class PropertyEntity {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public void setOwnerName(String ownerName) {
-        this.ownerName = ownerName;
-    }
-
-    public void setOwnerEmail(String ownerEmail) {
-        this.ownerEmail = ownerEmail;
     }
 
     public void setPrice(Double price) {
@@ -61,14 +54,6 @@ public class PropertyEntity {
         return description;
     }
 
-    public String getOwnerName() {
-        return ownerName;
-    }
-
-    public String getOwnerEmail() {
-        return ownerEmail;
-    }
-
     public Double getPrice() {
         return price;
     }
@@ -77,10 +62,7 @@ public class PropertyEntity {
         return address;
     }
 
-    @Column(name = "EMAIL", nullable = false)
-    private String ownerEmail;
-    private Double price;
-    private String address;
+
 
 
 }
