@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import java.util.Date;
 
 @Entity
 @Table(name = "USER_TABLE")
@@ -11,55 +12,17 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class UserEntity {
-    @Id //to make this primary key
+    @Id //to make this as primary key
     @GeneratedValue(strategy = GenerationType.AUTO)  //to generate primary key automatically
     private Long id;
-    private String ownerName;
+    @Column(nullable = false)
+    private String firstName;
+    private String lastName;
     @Column(name ="EMAIL", nullable = false)
-    private String ownerEmail;
+    private String email;
     private String phone;
+    @Column(nullable = false)
     private String password;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getOwnerName() {
-        return ownerName;
-    }
-
-    public void setOwnerName(String ownerName) {
-        this.ownerName = ownerName;
-    }
-
-    public String getOwnerEmail() {
-        return ownerEmail;
-    }
-
-    public void setOwnerEmail(String ownerEmail) {
-        this.ownerEmail = ownerEmail;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-
+    private Date creationDate;
 
 }

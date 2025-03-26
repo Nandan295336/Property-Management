@@ -8,9 +8,9 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-
 import java.util.ArrayList;
 import java.util.List;
+
 
 @ControllerAdvice
 public class CustomExceptionHandler {
@@ -19,7 +19,6 @@ public class CustomExceptionHandler {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<List<ErrorModel>> handleFieldValidation(MethodArgumentNotValidException manv){
-
 
         List<ErrorModel> errorModelList = new ArrayList<>();
         ErrorModel errorModel = null;
