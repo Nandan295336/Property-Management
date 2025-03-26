@@ -1,80 +1,35 @@
 package com.mycompany.property_management.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.Date;
 
 @Getter
 @Setter
 
-
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class PropertyDTO {
 
-
-
     private Long id;
+    private Long userId;
+    private Long categoryId;
     private String title;
     private String description;
-    private String ownerName;
-    private String ownerEmail;
     private Double price;
-    private String address;
-
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public void setOwnerName(String ownerName) {
-        this.ownerName = ownerName;
-    }
-
-    public void setOwnerEmail(String ownerEmail) {
-        this.ownerEmail = ownerEmail;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public String getOwnerName() {
-        return ownerName;
-    }
-
-    public String getOwnerEmail() {
-        return ownerEmail;
-    }
-
-    public Double getPrice() {
-        return price;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
+    private String construction;
+    private String image1;
+    private String image2;
+    private String image3;
+    private String video;
+    private Double area;
+    private Integer noOfRooms;
+    @JsonFormat(shape= JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+    private Date creationDate;
+    @JsonFormat(shape= JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+    private Date updationDate;
+    private AdressDTO addressDTO;
 
 }
